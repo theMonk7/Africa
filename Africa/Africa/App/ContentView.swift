@@ -22,14 +22,13 @@ struct ContentView: View {
                 }
                 Section {
                     ForEach(animals) { animal in
-                        AnimalListItemView(animal: animal)
+                        NavigationLink {
+                            AnimalDetailView(animal: animal)
+                        } label: {
+                            AnimalListItemView(animal: animal)
+                        }
                     }
                 }
-
-                Section {
-                    
-                }
-                
             }
             .navigationBarTitle("Africa", displayMode: .large)
         }
